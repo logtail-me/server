@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "prepare": "nitropack prepare",
+    "dev": "npm run build && wrangler dev",
+    "build": "NITRO_PRESET=cloudflare nitropack build",
+    "preview": "node .output/server/index.mjs"
+  },
+  "dependencies": {
+    "nitropack": "latest"
+  }
+}
