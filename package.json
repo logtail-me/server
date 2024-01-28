@@ -5,9 +5,17 @@
     "dev": "npm run build && wrangler dev --port 2000",
     "build": "NITRO_PRESET=cloudflare nitropack build",
     "preview": "node .output/server/index.mjs",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "db:migrate": "rimraf .cache/.migrations && pnpm drizzle-kit generate:pg --config=./drizzle.config.ts && pnpm tsx ./database/migrate.ts && drizzle-kit push:pg"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^0.7.2",
+    "drizzle-orm": "^0.29.3",
     "nitropack": "latest"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.20.13",
+    "rimraf": "^5.0.5",
+    "tsx": "^4.7.0"
   }
 }
