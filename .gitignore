@@ -4,4 +4,10 @@ dist
 .nitro
 .cache
 .output
+
+.dev.vars
 .env
+
+.wrangler
+
+*.pem

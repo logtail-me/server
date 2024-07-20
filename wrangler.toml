@@ -1,0 +1,15 @@
+name = "playground"
+main = "./.output/server/index.mjs"
+workers_dev = true
+node_compat = true
+compatibility_date = "2023-12-01"
+rules = [
+    { type = "ESModule", globs = ["**/*.js"] }
+]
+
+[[r2_buckets]]
+binding = "skins"
+bucket_name = "skins"
+
+[site]
+bucket = ".output/public"
